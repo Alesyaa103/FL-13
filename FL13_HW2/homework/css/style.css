@@ -226,10 +226,6 @@ input[id="contact_subject"] {
   box-shadow: none;
 }
 
-.form-group textarea:focus {
-  background-color: #fff;
-}
-
 .submit-btn {
   float: right;
   border: 2px solid lightskyblue;
