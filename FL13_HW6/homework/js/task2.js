@@ -2,7 +2,7 @@ let str = prompt('enter string', '');
 let odd = 2;
 
 str = str.replace(/\s+/g, '');
-console.log('ytct', str)
+
 if (str === '') {
   alert('Invalid input data')
 } else if (str.length % odd === 0) {
