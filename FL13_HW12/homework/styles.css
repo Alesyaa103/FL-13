@@ -1,0 +1,51 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+header,
+.book {
+  display: flex;
+}
+
+.book input,
+.book a {
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  height: 400px;
+  width: auto;
+}
+#root,
+form,
+#container,
+.book {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form,
+#container{
+  height: auto;
+  padding: 0 5%;
+}
+
+a,
+input,
+textarea {
+  padding: 10px 40px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: inherit;
+  border: 1px solid #31428d;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  color: #232e5e;
+}
