@@ -1,35 +1,42 @@
+const hiddenName = Symbol('hiddenName');
+const hiddenEmail = Symbol('hiddenEmail');
+const hiddenHwResults = Symbol('hiddenHwResults');
+
 function Student(name, email) {
-  this._name = name;
-  this._email = email;
-  this._homeworkResults = []
-  this.getName = () => this._name;
-  this.getEmail = () => this._email;
+  this[hiddenName] = name;
+  this[hiddenEmail] = email;
+  this[hiddenHwResults] = [];
+  this.getName = () => this[hiddenName];
+  this.getEmail = () => this[hiddenEmail];
 
   this.addHomeworkResult = (topic, success) => {
-    this._homeworkResults.push({
+    this[hiddenHwResults].push({
       topic,
       success
     });
   }
 
-  this.getHomeworkResult = () => this._homeworkResults
+  this.getHomeworkResult = () => this[hiddenHwResults]
 }
 
+const hiddenStudentList = Symbol('hiddenStudentList')
+const hiddenFaildLimit = Symbol('hiddenFaildLimit')
+
 function FrontendLab(students, failedLimit) {
-  this._studentsList = [];
+  this[hiddenStudentList] = [];
 
   for (let student of students) {
     let {
       name,
       email
     } = student;
-    this._studentsList.push(new Student(name, email))
+    this[hiddenStudentList].push(new Student(name, email))
   }
 
-  this._failedHomeworksLimit = failedLimit
+  this[hiddenFaildLimit] = failedLimit
 
   this.printStudentsList = () => {
-    for (let student of this._studentsList) {
+    for (let student of this[hiddenStudentList]) {
       console.log(`name: ${student.getName()}, email: ${student.getEmail()}`)
       console.log(student.getHomeworkResult())
     }
@@ -40,15 +47,15 @@ function FrontendLab(students, failedLimit) {
       topic,
       results
     } = homeworkResult;
-    for (let student of this._studentsList) {
+    for (let student of this[hiddenStudentList]) {
       let email = student.getEmail()
       student.addHomeworkResult(topic, results.filter((val) => val.email === email)[0].success)
     }
   }
 
   this.printStudentsEligibleForTest = () => {
-    let succeedStudent = this._studentsList.filter((student) => {
-      return student.getHomeworkResult().filter((item) => item.success === false).length <= this._failedHomeworksLimit
+    let succeedStudent = this[hiddenStudentList].filter((student) => {
+      return student.getHomeworkResult().filter((item) => item.success === false).length <= this[hiddenFaildLimit]
     });
     for (let student of succeedStudent) {
       console.log(`name: ${student.getName()}, email: ${student.getEmail()}`)
