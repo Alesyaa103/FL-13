@@ -20,7 +20,7 @@ function Student(name, email) {
 }
 
 const studentsList = Symbol('studentsList')
-const failedHomeworksLimit  = Symbol('failedHomeworksLimit ')
+const failedHomeworksLimit = Symbol('failedHomeworksLimit ')
 
 function FrontendLab(students, failedLimit) {
   this[studentsList] = [];
