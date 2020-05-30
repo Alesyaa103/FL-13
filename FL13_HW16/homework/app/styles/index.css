@@ -1,0 +1,17 @@
+#app-container {
+  text-align: center;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+span {
+  margin-right: 10px;
+}
+
+button:disabled{
+  color: rgb(85, 80, 80);
+  background-color: rgb(214, 203, 203);
+}
