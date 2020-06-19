@@ -742,6 +742,9 @@ footer .footer-copyright {
     height: 35vh;
   }
 
+  .main-home {
+    background: url('../img/home-bg-980.jpg') no-repeat;
+  }
 }
 
 
@@ -766,7 +769,10 @@ footer .footer-copyright {
   footer .col-md-4 {
     padding-top: 22px;
   }
-
+  
+  .main-home {
+    background: url('../img/home-bg-768.jpg') no-repeat;
+  }
 }
 
 
@@ -781,6 +787,11 @@ footer .footer-copyright {
   #blog, #blog-single-post {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  
+  .main-home {
+    background: url('../img/home-bg-650.jpg') no-repeat;
   }
 
 }
