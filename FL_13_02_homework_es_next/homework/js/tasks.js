@@ -26,6 +26,10 @@ const regroupObject = ({name, details: {university, ...rest}}) => ({
 
 console.log(regroupObject({name: 'Katya', details: {id: 1, age: 21, university: 'KNU'}}));
 
+const findUniqueElement = (arr) => [... new Set(arr)];
+
+console.log(findUniqueElement([1,2,2,3,5,2,3,4,2,0,9,6,5,6,8,2,3,5,2]));
+
 const hideNumber = str => str.substr(-4, 4).padStart(str.length, '*');
 
 console.log(hideNumber('0123456789'));
@@ -46,21 +50,20 @@ const getNames = (url) => fetch(url)
 
 getNames('https://jsonplaceholder.typicode.com/users').then(data => console.log(data));
 
+const compare = (x, y, i = 0) => (x[i] - y[i] === 0) ? compare(x, y, i+1) : x[i] - y[i];
+
 const getRepoNames = async url => {
   try {
     const res = await fetch(url, {
       method: 'GET',
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'X-Requested-With'
+        'Content-Type': 'application/json'
       },
-      mode: 'cors',
-      cache: 'default',
+      mode: 'cors'
     });
-    console.log(res)
-    const data = await res.json()
-    return data.map(item => item['name'])
-    // .reduce((x, y) => x[0] > y[0] ? 1 : -1)
+    const data = await res.json();
+    const repos = data.map(item => item['name']);
+    return repos.sort((x, y) => compare(x.toLowerCase(), y.toLowerCase()));
   } catch (error) {
     console.log(error)
   }
