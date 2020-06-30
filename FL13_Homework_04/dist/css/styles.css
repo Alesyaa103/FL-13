@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#container {
+  width: 80vw;
+  margin: 20px auto;
+  text-align: center;
+  background: #dbdada;
+  padding: 20px 0px; }
+
+input {
+  margin: 10px;
+  font-size: 15px; }
+
+img {
+  width: 100%;
+  height: auto; }
+

@@ -3,3 +3,5 @@ task/
 examples/
 mockup/
 server/
+*.docx
+node_modules/
