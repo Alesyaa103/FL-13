@@ -1,0 +1,12 @@
+.options {
+  width: 100%;
+  display: inline-flex;
+}
+
+.search {
+  border-radius:6px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+}

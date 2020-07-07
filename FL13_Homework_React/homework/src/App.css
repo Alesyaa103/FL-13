@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.App-header, .App-footer {
+  height: 40px;
+  background-color: #fff;
+  padding: 10px 15%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.App-footer {
+  text-transform: none;
+  font-weight: 100;
+  color: gray;
+}
+
+.wrapper {
+  width: 100vw;
+  flex-grow: 3;
+  background-color: rgb(225, 236, 236);
+  padding: 5% 10%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
